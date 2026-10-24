@@ -1,0 +1,28 @@
+public class Main {
+
+    static class Vehicle {
+        String regNo, type;
+
+        Vehicle(String regNo, String type) {
+            this.regNo = regNo;
+            this.type = type;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Vehicle[] vehicles = {
+            new Vehicle("TN01A1", "TwoWheeler"),
+            new Vehicle("TN02B2", "Car")
+        };
+
+        String search = "TN02B2";
+
+        for (Vehicle v : vehicles) {
+            if (v.regNo.equals(search)) {
+                System.out.println(v.regNo + " is a " + v.type);
+                break;
+            }
+        }
+    }
+}
