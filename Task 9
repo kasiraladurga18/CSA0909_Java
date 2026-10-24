@@ -1,0 +1,58 @@
+class ParkingVehicle {
+    private String vehicleNumber;
+    private String vehicleType;
+    private double parkingFee;
+
+    ParkingVehicle(String vehicleNumber, String vehicleType, double parkingFee) {
+        this.vehicleNumber = vehicleNumber;
+        this.vehicleType = vehicleType;
+        this.parkingFee = parkingFee;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
+    public String getVehicleType() {
+        return vehicleType;
+    }
+
+    public double getParkingFee() {
+        return parkingFee;
+    }
+
+    public void displayDetails() {
+        System.out.println("Vehicle Number: " + vehicleNumber);
+        System.out.println("Vehicle Type: " + vehicleType);
+        System.out.println("Parking Fee: Rs. " + parkingFee);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ParkingVehicle v1 =
+                new ParkingVehicle("TN01AB1234", "Car", 90);
+
+        ParkingVehicle v2 =
+                new ParkingVehicle("TN02CD5678", "Bike", 30);
+
+        System.out.println("----- Vehicle 1 Details -----");
+        v1.displayDetails();
+
+        System.out.println();
+
+        System.out.println("----- Vehicle 2 Details -----");
+        v2.displayDetails();
+
+        System.out.println();
+
+        v1.setVehicleNumber("TN01XY9876");
+
+        System.out.println("----- Updated Vehicle Details -----");
+        v1.displayDetails();
+    }
+}
