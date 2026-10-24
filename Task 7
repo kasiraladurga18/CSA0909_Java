@@ -1,0 +1,44 @@
+class Vehicle {
+    void calculateFee() {
+        System.out.println("General vehicle parking fee: Rs. 50");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void calculateFee() {
+        System.out.println("Car parking fee: Rs. 90");
+    }
+}
+
+class Bike extends Vehicle {
+    @Override
+    void calculateFee() {
+        System.out.println("Bike parking fee: Rs. 30");
+    }
+}
+
+class ElectricCar extends Vehicle {
+    @Override
+    void calculateFee() {
+        System.out.println("Electric car parking fee: Rs. 210");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v;
+
+        v = new Car();
+        v.calculateFee();
+
+        v = new Bike();
+        v.calculateFee();
+
+        v = new ElectricCar();
+        v.calculateFee();
+
+        v = new Vehicle();
+        v.calculateFee();
+    }
+}
