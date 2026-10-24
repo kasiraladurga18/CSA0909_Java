@@ -1,0 +1,44 @@
+class Vehicle {
+    public String vehicleNumber;
+    protected String vehicleType;
+    private double parkingFee;
+
+    public Vehicle(String vehicleNumber, String vehicleType, double parkingFee) {
+        this.vehicleNumber = vehicleNumber;
+        this.vehicleType = vehicleType;
+        this.parkingFee = parkingFee;
+    }
+
+    public void displayDetails() {
+        System.out.println("Vehicle Number: " + vehicleNumber);
+        System.out.println("Vehicle Type: " + vehicleType);
+        System.out.println("Parking Fee: Rs. " + parkingFee);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Vehicle("TN01AB1234", "Car", 90);
+        Vehicle v2 = new Vehicle("TN02CD5678", "Bike", 30);
+        Vehicle v3 = new Vehicle("TN03EF9012", "Electric Car", 210);
+
+        System.out.println("===== SMART PARKING SYSTEM =====");
+        System.out.println();
+
+        System.out.println("Vehicle 1 Details:");
+        v1.displayDetails();
+
+        System.out.println();
+
+        System.out.println("Vehicle 2 Details:");
+        v2.displayDetails();
+
+        System.out.println();
+
+        System.out.println("Vehicle 3 Details:");
+        v3.displayDetails();
+
+        System.out.println();
+        System.out.println("All vehicle details displayed successfully.");
+    }
+}
