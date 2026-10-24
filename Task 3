@@ -1,0 +1,21 @@
+public class Main {
+public static void main(String[] args) {
+String[] slots = {"Empty", "Occupied", "Empty", "Occupied", "Empty"};
+String vehicle = "Car";
+boolean allocated = false;
+
+    for (int i = 0; i < slots.length; i++) {
+        if (slots[i].equals("Empty")) {
+            slots[i] = vehicle;
+            System.out.println("Vehicle parked in slot " + (i + 1));
+            allocated = true;
+            break;
+        }
+    }
+
+    if (!allocated) {
+        System.out.println("No parking slot available");
+    }
+}
+
+}
