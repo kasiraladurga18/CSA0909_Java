@@ -1,0 +1,37 @@
+public class Main {
+    public static void main(String[] args) {
+        String[] slots = {"Empty", "Empty", "Empty", "Empty", "Empty"};
+        String[] vehicles = {"Car", "Bike", "Car"};
+
+        System.out.println("CAMPUS SMART PARKING SYSTEM");
+        System.out.println("---------------------------");
+
+        for (int i = 0; i < vehicles.length; i++) {
+            boolean parked = false;
+
+            for (int j = 0; j < slots.length; j++) {
+                if (slots[j].equals("Empty")) {
+                    slots[j] = vehicles[i];
+                    System.out.println(vehicles[i] +
+                            " allocated to Slot " + (j + 1));
+                    parked = true;
+                    break;
+                }
+            }
+
+            if (!parked) {
+                System.out.println("No slot available for " + vehicles[i]);
+            }
+        }
+
+        System.out.println("\nFinal Parking Status:");
+
+        for (int i = 0; i < slots.length; i++) {
+            System.out.println("Slot " + (i + 1) + ": " + slots[i]);
+        }
+
+        System.out.println("\nTotal Slots: " + slots.length);
+        System.out.println("Vehicles Parked: " + vehicles.length);
+        System.out.println("Allocation Process Completed.");
+    }
+}
