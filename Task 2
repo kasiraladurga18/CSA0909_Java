@@ -1,0 +1,18 @@
+public class Main {
+public static void main(String[] args) {
+String vehicleType = "Car";
+int fee = 0;
+
+    if (vehicleType.equals("Bike")) {
+        fee = 30;
+    } else if (vehicleType.equals("Car")) {
+        fee = 90;
+    } else if (vehicleType.equals("Electric Car")) {
+        fee = 210;
+    }
+
+    System.out.println("Vehicle Type: " + vehicleType);
+    System.out.println("Parking Fee: Rs. " + fee);
+}
+
+}
