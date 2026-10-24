@@ -1,0 +1,44 @@
+class Vehicle {
+    String vehicleNumber;
+    int parkingFee;
+
+    Vehicle(String number, int fee) {
+        vehicleNumber = number;
+        parkingFee = fee;
+    }
+
+    void display() {
+        System.out.println("Vehicle Number: " + vehicleNumber);
+        System.out.println("Parking Fee: Rs. " + parkingFee);
+    }
+}
+
+class Car extends Vehicle {
+    Car(String number) {
+        super(number, 90);
+    }
+}
+
+class Bike extends Vehicle {
+    Bike(String number) {
+        super(number, 30);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("TN01AB1234");
+        Bike bike = new Bike("TN02CD5678");
+
+        System.out.println("CAMPUS SMART PARKING SYSTEM");
+        System.out.println("---------------------------");
+
+        System.out.println("\nCar Details:");
+        car.display();
+
+        System.out.println("\nBike Details:");
+        bike.display();
+
+        System.out.println("\nFee calculation completed.");
+    }
+}
