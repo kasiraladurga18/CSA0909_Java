@@ -1,0 +1,72 @@
+class Parking {
+    String vehicleNumber;
+    String vehicleType;
+    boolean monthlyPass;
+
+    Parking(String vehicleNumber, String vehicleType, boolean monthlyPass) {
+        this.vehicleNumber = vehicleNumber;
+        this.vehicleType = vehicleType;
+        this.monthlyPass = monthlyPass;
+    }
+
+    double calculateFee() {
+        if (monthlyPass) {
+            return 0;
+        }
+
+        if (vehicleType.equalsIgnoreCase("Bike")) {
+            return 30;
+        } else if (vehicleType.equalsIgnoreCase("Car")) {
+            return 90;
+        } else if (vehicleType.equalsIgnoreCase("Delivery Van")) {
+            return 180;
+        } else {
+            return 50;
+        }
+    }
+
+    void displayDetails() {
+        System.out.println("Vehicle Number: " + vehicleNumber);
+        System.out.println("Vehicle Type: " + vehicleType);
+
+        if (monthlyPass) {
+            System.out.println("Pass Type: Monthly Pass");
+        } else {
+            System.out.println("Pass Type: Visitor");
+        }
+
+        System.out.println("Parking Fee: Rs. " + calculateFee());
+        System.out.println("------------------------------");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parking p1 = new Parking("TN01AB1234", "Car", true);
+        Parking p2 = new Parking("TN02CD5678", "Bike", false);
+        Parking p3 = new Parking("TN03EF9012", "Car", false);
+        Parking p4 = new Parking("TN04GH3456", "Delivery Van", false);
+        Parking p5 = new Parking("TN05IJ7890", "Bike", true);
+
+        System.out.println("================================");
+        System.out.println("      SMART PARKING SYSTEM");
+        System.out.println("================================");
+
+        System.out.println("\nVehicle 1 Details:");
+        p1.displayDetails();
+
+        System.out.println("\nVehicle 2 Details:");
+        p2.displayDetails();
+
+        System.out.println("\nVehicle 3 Details:");
+        p3.displayDetails();
+
+        System.out.println("\nVehicle 4 Details:");
+        p4.displayDetails();
+
+        System.out.println("\nVehicle 5 Details:");
+        p5.displayDetails();
+
+        System.out.println("Parking fee calculation completed.");
+    }
+}
