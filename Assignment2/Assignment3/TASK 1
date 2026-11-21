@@ -1,0 +1,62 @@
+import java.util.*;
+
+
+2	+
+3	+
+public class ATM1 {
+4	+
+    public static void main(String[] args) {
+5	+
+        Scanner sc = new Scanner(System.in);
+6	+
+        int balance = 5000;
+7	+
+8	+
+        try {
+9	+
+            System.out.print("Enter account number: ");
+10	+
+            int acc = sc.nextInt();
+11	+
+12	+
+            System.out.print("Enter amount: ");
+13	+
+            int amount = sc.nextInt();
+14	+
+15	+
+            if (amount < 0)
+16	+
+                throw new IllegalArgumentException("Negative amount");
+17	+
+18	+
+            if (amount > balance)
+19	+
+                throw new ArithmeticException("Insufficient balance");
+20	+
+21	+
+            balance -= amount;
+22	+
+            System.out.println("Withdrawal successful");
+23	+
+            System.out.println("Balance: " + balance);
+24	+
+25	+
+        } catch (InputMismatchException | IllegalArgumentException e) {
+26	+
+            System.out.println("Invalid input");
+27	+
+28	+
+        } catch (ArithmeticException e) {
+29	+
+            System.out.println(e.getMessage());
+30	+
+31	+
+        } finally {
+32	+
+            System.out.println("Transaction completed");
+33	+
+        }
+34	+
+    }
+35	+
+}
